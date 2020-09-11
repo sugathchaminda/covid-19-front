@@ -1,5 +1,6 @@
 const constants = {
-    TIMEZONE_VALIDATION_REGEX: /[+-][0-9]{2}:[0-9]{2}\b/,
+    MAIN_CONTENT_BLOCK: 'main-content-block',
+    FREEZE_UI_CLASS: 'sc-freeze-ui',
 };
 
 module.exports = Object.freeze(constants);

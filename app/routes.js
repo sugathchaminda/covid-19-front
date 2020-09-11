@@ -23,18 +23,6 @@ const CountryDistance = Loadable({
     loading: LoadingComponent,
 });
 
-const ClosestCountry = Loadable({
-    loader: () => import('./containers/application/closestCountry'),
-    loading: LoadingComponent,
-});
-const CountriesTimezone = Loadable({
-    loader: () => import('./containers/application/countriesTimezone'),
-    loading: LoadingComponent,
-});
-const CountriesSearch = Loadable({
-    loader: () => import('./containers/application/countriesSearch'),
-    loading: LoadingComponent,
-});
 
 const Routes = () => (
     <ConnectedRouter history={history}>
@@ -46,9 +34,6 @@ const Routes = () => (
                     <BaseAuth>
                         <Route path="/dashboard" render={() => <Dashboard />} />
                         <Route path="/country/distance" component={CountryDistance} />
-                        <Route path="/country/closest" component={ClosestCountry} />
-                        <Route path="/countries/timezone" component={CountriesTimezone} />
-                        <Route path="/countries/search" component={CountriesSearch} />
                     </BaseAuth>
                     <Redirect from="/*" to="/" />
                 </Switch>

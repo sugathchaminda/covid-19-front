@@ -2,15 +2,12 @@ import {
     GET_COUNTRIES_DISTANCE,
     GET_COUNTRIES_DISTANCE_SUCCESS,
     GET_COUNTRIES_DISTANCE_FAILED,
-    GET_CLOSEST_COUNTRY,
-    GET_CLOSEST_COUNTRY_SUCCESS,
-    GET_CLOSEST_COUNTRY_FAILED,
-    GET_TIMEZONE_COUNTRIES,
-    GET_TIMEZONE_COUNTRIES_SUCCESS,
-    GET_TIMEZONE_COUNTRIES_FAILED,
-    GET_SEARCH_COUNTRIES,
-    GET_SEARCH_COUNTRIES_SUCCESS,
-    GET_SEARCH_COUNTRIES_FAILED,
+    GET_GENERAL_STAT,
+    GET_GENERAL_STAT_FAILED,
+    GET_GENERAL_STAT_SUCCESS,
+    GET_DAILY_STAT,
+    GET_DAILY_STAT_SUCCESS,
+    GET_DAILY_STAT_FAILED,
     CLEAR_COUNTRY_DATA,
 } from '../../constants/action_types/application';
 
@@ -30,68 +27,54 @@ const getCountryDistanceFailed = error => ({
     error,
 });
 
-const getClosestCountry = data => ({
-    type: GET_CLOSEST_COUNTRY,
-    data,
-});
-
-const getClosestCountrySuccess = response => ({
-    type: GET_CLOSEST_COUNTRY_SUCCESS,
-    response,
-});
-
-const getClosestCountryFailed = error => ({
-    type: GET_CLOSEST_COUNTRY_FAILED,
-    error,
-});
-
-const getTimezoneCountries = data => ({
-    type: GET_TIMEZONE_COUNTRIES,
-    data,
-});
-
-const getTimezoneCountriesSuccess = response => ({
-    type: GET_TIMEZONE_COUNTRIES_SUCCESS,
-    response,
-});
-
-const getTimezoneCountriesFailed = error => ({
-    type: GET_TIMEZONE_COUNTRIES_FAILED,
-    error,
-});
-
-const getSearchCountries = data => ({
-    type: GET_SEARCH_COUNTRIES,
-    data,
-});
-
-const getSearchCountriesSuccess = response => ({
-    type: GET_SEARCH_COUNTRIES_SUCCESS,
-    response,
-});
-
-const getSearchCountriesFailed = error => ({
-    type: GET_SEARCH_COUNTRIES_FAILED,
-    error,
-});
 
 const clearCountryData = response => ({
     type: CLEAR_COUNTRY_DATA,
     response,
 });
 
+// need to remove //
+
+const getGeneralStat = data => ({
+    type: GET_GENERAL_STAT,
+    data,
+});
+
+const getGeneralStatSuccess = response => ({
+    type: GET_GENERAL_STAT_SUCCESS,
+    response,
+});
+
+const getGeneralStatFailed = error => ({
+    type: GET_GENERAL_STAT_FAILED,
+    error,
+});
+
+const getDailyStat = data => ({
+    type: GET_DAILY_STAT,
+    data,
+});
+
+const getDailyStatSuccess = response => ({
+    type: GET_DAILY_STAT_SUCCESS,
+    response,
+});
+
+const getDailyStatFailed = error => ({
+    type: GET_DAILY_STAT_FAILED,
+    error,
+});
+// need to remove //
+
 export {
     getCountryDistance,
     getCountryDistanceSuccess,
     getCountryDistanceFailed,
-    getClosestCountry,
-    getClosestCountrySuccess,
-    getClosestCountryFailed,
-    getTimezoneCountries,
-    getTimezoneCountriesFailed,
-    getTimezoneCountriesSuccess,
-    getSearchCountries,
-    getSearchCountriesSuccess,
-    getSearchCountriesFailed,
+    getGeneralStat,
+    getGeneralStatSuccess,
+    getGeneralStatFailed,
     clearCountryData,
+    getDailyStat,
+    getDailyStatSuccess,
+    getDailyStatFailed,
 };

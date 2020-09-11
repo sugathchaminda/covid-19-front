@@ -18,64 +18,51 @@ const selectGetCountryDistanceError = () => createSelector(
 );
 
 
-const selectGetClosestCountry = () => createSelector(
-    selectCountryManagementState,
-    currentState => currentState.selectClosestCountryStatus,
+// ////////////////////////
+const selectDashboardManagementState = state => state.dashboard;
+
+const selectGetGeneralStat = () => createSelector(
+    selectDashboardManagementState,
+    currentState => currentState.generalStatState,
 );
 
-const selectGetClosestCountrySuccess = () => createSelector(
-    selectCountryManagementState,
-    currentState => currentState.selectClosestCountryStatusResponse,
+const selectGetGeneralStatSuccess = () => createSelector(
+    selectDashboardManagementState,
+    currentState => currentState.generalStatStateResponse,
 );
 
-const selectGetClosestCountryError = () => createSelector(
-    selectCountryManagementState,
-    currentState => currentState.selectClosestCountryStatusError,
+const selectGetGeneralStatError = () => createSelector(
+    selectDashboardManagementState,
+    currentState => currentState.generalStatStateError,
 );
 
-const selectGetTimezoneCountries = () => createSelector(
-    selectCountryManagementState,
-    currentState => currentState.selectTimezoneCountriesStatus,
+const selectGetDailyStat = () => createSelector(
+    selectDashboardManagementState,
+    currentState => currentState.dailyStatState,
 );
 
-const selectGetTimezoneCountriesSuccess = () => createSelector(
-    selectCountryManagementState,
-    currentState => currentState.selectTimezoneCountriesResponse,
+const selectGetDailyStatSuccess = () => createSelector(
+    selectDashboardManagementState,
+    currentState => currentState.dailyStatStateResponse,
 );
 
-const selectGetTimezoneCountriesError = () => createSelector(
-    selectCountryManagementState,
-    currentState => currentState.selectTimezoneCountriesError,
+const selectGetDailyStatError = () => createSelector(
+    selectDashboardManagementState,
+    currentState => currentState.dailyStatStateError,
 );
 
-const selectGetSearchCountries = () => createSelector(
-    selectCountryManagementState,
-    currentState => currentState.selectSearchCountriesStatus,
-);
-
-const selectGetSearchCountriesSuccess = () => createSelector(
-    selectCountryManagementState,
-    currentState => currentState.selectSearchCountriesResponse,
-);
-
-const selectGetSearchCountriesError = () => createSelector(
-    selectCountryManagementState,
-    currentState => currentState.selectSearchCountriesError,
-);
+// /////////////////////
 
 
 export {
     selectGetCountryDistance,
     selectGetCountryDistanceSuccess,
     selectGetCountryDistanceError,
-    selectGetClosestCountry,
-    selectGetClosestCountrySuccess,
-    selectGetClosestCountryError,
-    selectGetTimezoneCountries,
-    selectGetTimezoneCountriesSuccess,
-    selectGetTimezoneCountriesError,
-    selectGetSearchCountries,
-    selectGetSearchCountriesSuccess,
-    selectGetSearchCountriesError,
+    selectGetGeneralStat,
+    selectGetGeneralStatSuccess,
+    selectGetGeneralStatError,
+    selectGetDailyStat,
+    selectGetDailyStatSuccess,
+    selectGetDailyStatError,
 
 };
