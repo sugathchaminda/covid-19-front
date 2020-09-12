@@ -1,24 +1,5 @@
 import { createSelector } from 'reselect';
 
-const selectCountryManagementState = state => state.countryManagement;
-
-const selectGetCountryDistance = () => createSelector(
-    selectCountryManagementState,
-    currentState => currentState.selectCountryDistanceStatus,
-);
-
-const selectGetCountryDistanceSuccess = () => createSelector(
-    selectCountryManagementState,
-    currentState => currentState.selectCountryDistanceResponse,
-);
-
-const selectGetCountryDistanceError = () => createSelector(
-    selectCountryManagementState,
-    currentState => currentState.selectCountryDistanceError,
-);
-
-
-// ////////////////////////
 const selectDashboardManagementState = state => state.dashboard;
 
 const selectGetGeneralStat = () => createSelector(
@@ -51,18 +32,33 @@ const selectGetDailyStatError = () => createSelector(
     currentState => currentState.dailyStatStateError,
 );
 
+const selectGetProvinceStat = () => createSelector(
+    selectDashboardManagementState,
+    currentState => currentState.provinceStatState,
+);
+
+const selectGetProvinceStatSuccess = () => createSelector(
+    selectDashboardManagementState,
+    currentState => currentState.provinceStatStateResponse,
+);
+
+const selectGetProvinceStatError = () => createSelector(
+    selectDashboardManagementState,
+    currentState => currentState.provinceStatStateError,
+);
+
 // /////////////////////
 
 
 export {
-    selectGetCountryDistance,
-    selectGetCountryDistanceSuccess,
-    selectGetCountryDistanceError,
     selectGetGeneralStat,
     selectGetGeneralStatSuccess,
     selectGetGeneralStatError,
     selectGetDailyStat,
     selectGetDailyStatSuccess,
     selectGetDailyStatError,
+    selectGetProvinceStat,
+    selectGetProvinceStatSuccess,
+    selectGetProvinceStatError,
 
 };

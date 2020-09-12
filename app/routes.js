@@ -18,12 +18,6 @@ const Dashboard = Loadable({
     loading: LoadingComponent,
 });
 
-const CountryDistance = Loadable({
-    loader: () => import('./containers/application/countryDistance'),
-    loading: LoadingComponent,
-});
-
-
 const Routes = () => (
     <ConnectedRouter history={history}>
         <ScProvider>
@@ -33,7 +27,6 @@ const Routes = () => (
                     <Route path="/login" component={SignIn} />
                     <BaseAuth>
                         <Route path="/dashboard" render={() => <Dashboard />} />
-                        <Route path="/country/distance" component={CountryDistance} />
                     </BaseAuth>
                     <Redirect from="/*" to="/" />
                 </Switch>
