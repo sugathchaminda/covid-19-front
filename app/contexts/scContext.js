@@ -8,11 +8,16 @@ export const ScProvider = ({ children }) => {
         type: '',
         message: '',
     });
+    const [showDashboardLayout, setShowDashboardLayout] = useState(false);
 
     const values = {
         safeNotification,
+        showDashboardLayout,
         setSafeNotification: data => {
             setSafeNotification(data);
+        },
+        setShowDashboardLayout: status => {
+            setShowDashboardLayout(status);
         },
     };
 

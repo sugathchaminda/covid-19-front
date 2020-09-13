@@ -15,6 +15,12 @@ class Util {
     unblockUi(selector = MAIN_CONTENT_BLOCK) {
         document.getElementById(selector).classList.remove(FREEZE_UI_CLASS);
     }
+
+    isDashboardLayout() {
+        const isLogged = browserStorage.getLocalStorage('sc_data');
+
+        return isLogged || false;
+    }
 }
 
 export default new Util();

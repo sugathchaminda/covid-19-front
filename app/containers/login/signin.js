@@ -17,7 +17,7 @@ import {
 
 const SignIn = ({ login, userLoginStatus, userLoginError }) => {
     const safeComContext = useContext(SafeComContext);
-    const { setSafeNotification } = safeComContext;
+    const { setSafeNotification, setShowDashboardLayout } = safeComContext;
     const initialValues = {
         email: '',
         password: '',
@@ -39,6 +39,7 @@ const SignIn = ({ login, userLoginStatus, userLoginError }) => {
 
     useEffect(() => {
         if (userLoginStatus) {
+            setShowDashboardLayout(true);
             history.push('/dashboard');
         }
     }, [userLoginStatus]);

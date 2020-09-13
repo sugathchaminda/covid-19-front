@@ -2,10 +2,13 @@ import { takeEvery, put } from 'redux-saga/effects';
 import browserStorage from '../../helpers/browserStorage';
 import {
     USER_LOGIN,
+    USER_LOGGED_OUT,
 } from '../../constants/action_types/user';
 import {
     userLoginSuccess,
     userLoginFailed,
+    userLogoutFailed,
+    userLogoutSuccess,
 } from './actions';
 
 export function* userLogin(data) {
@@ -24,9 +27,21 @@ export function* userLogin(data) {
     }
 }
 
+export function* userLogout() {
+    try {
+        browserStorage.removeLocalStorage('sc_data');
+        yield put(userLogoutSuccess(true));
+    } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log('error->userLogout ', error);
+        yield put(userLogoutFailed(error));
+    }
+}
+
 
 export default function* userSignUpSagas() {
     yield* [
         takeEvery(USER_LOGIN, userLogin),
+        takeEvery(USER_LOGGED_OUT, userLogout),
     ];
 }

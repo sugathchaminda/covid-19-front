@@ -3,11 +3,14 @@ import PropTypes from 'prop-types';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import SafeComContext from './contexts/scContext';
 import Header from './components/common/header';
+import HeaderFront from './components/common/headerFront';
 import Footer from './components/common/footer';
+import util from './helpers/util';
+
 
 const Layout = ({ children }) => {
     const safeComContext = useContext(SafeComContext);
-    const { safeNotification } = safeComContext;
+    const { safeNotification, setShowDashboardLayout, showDashboardLayout } = safeComContext;
 
     useEffect(() => {
         const { type, message } = safeNotification;
@@ -32,9 +35,25 @@ const Layout = ({ children }) => {
         }
     }, [safeNotification]);
 
+    useEffect(() => {
+        if (util.isDashboardLayout()) {
+            setShowDashboardLayout(true);
+        } else {
+            setShowDashboardLayout(false);
+        }
+    }, []);
+
+    let header;
+
+    if (showDashboardLayout) {
+        header = <Header />;
+    } else {
+        header = <HeaderFront />;
+    }
+
     return (
         <div>
-            <Header />
+            {header}
             <div
                 className="container-fluid landing-customer-container"
                 id="main-content-block"

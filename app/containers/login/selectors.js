@@ -12,7 +12,13 @@ const selectUserLoginError = () => createSelector(
     currentState => currentState.userLoginError,
 );
 
+const selectUserLogoutStatus = () => createSelector(
+    selectUserLoginState,
+    currentState => currentState.userLogoutState,
+);
+
 export {
     selectUserLoginStatus,
     selectUserLoginError,
+    selectUserLogoutStatus,
 };
