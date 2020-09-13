@@ -116,40 +116,39 @@ const Dashboard = ({
     return (
         <div>
             <div className="row">
-                <div className="col-md-3 col-sm-12 col-xs-12">
+                <div className="col-md-3 col-sm-12 col-xs-12 side-block">
                     <h2>Total Figures (SL)</h2>
-                    <div>
-                        Total Active Cases
-                        {generalStatValues.activeCases}
+                    <div className="item">
+                        <span className="title">Total Active Cases</span>
+                        <span className="count">{generalStatValues.activeCases}</span>
                     </div>
-                    <div>
-                        Total Confirmed Cases
-                        {generalStatValues.totalCases}
+                    <div className="item">
+                        <span className="title">Total Confirmed Cases</span>
+                        <span className="count">{generalStatValues.totalCases}</span>
                     </div>
-                    <div>
-                        Deaths
-                        {generalStatValues.totalDeaths}
+                    <div className="item">
+                        <span className="title">Deaths</span>
+                        <span className="count">{generalStatValues.totalDeaths}</span>
                     </div>
-                    <div>
-                        Suspected & Hospitalized
-
-                        {generalStatValues.suspected}
+                    <div className="item">
+                        <span className="title">Suspected & Hospitalized</span>
+                        <span className="count">{generalStatValues.suspected}</span>
                     </div>
-                    <div>
-                        Recovered & Discharged
-                        {generalStatValues.recovered}
+                    <div className="item">
+                        <span className="title">Recovered & Discharged</span>
+                        <span className="count">{generalStatValues.recovered}</span>
                     </div>
-                    <div>
-                        Recovery Rate
-                        {generalStatValues.recoveryRate}
+                    <div className="item">
+                        <span className="title">Recovery Rate</span>
+                        <span className="count">{generalStatValues.recoveryRate}</span>
                     </div>
-                    <div>
-                        Death Rate
-                        {generalStatValues.deathRate}
+                    <div className="item">
+                        <span className="title">Death Rate</span>
+                        <span className="count">{generalStatValues.deathRate}</span>
                     </div>
                 </div>
-                <div className="col-md-6 col-sm-12 col-xs-12">
-                    <Table>
+                <div className="col-md-6 col-sm-12 col-xs-12 table-block">
+                    <Table responsive>
                         <thead>
                             <tr>
                                 <th>Province</th>
@@ -165,19 +164,19 @@ const Dashboard = ({
                         </tbody>
                     </Table>
                 </div>
-                <div className="col-md-3 col-sm-12 col-xs-12">
+                <div className="col-md-3 col-sm-12 col-xs-12 side-block">
                     <h2>Daily Figures (SL)</h2>
-                    <div>
-                        New Cases
-                        {dailyStatValues.newCases}
+                    <div className="item">
+                        <span className="title">New Cases</span>
+                        <span className="count">{dailyStatValues.newCases}</span>
                     </div>
-                    <div>
-                        Deaths
-                        {dailyStatValues.newDeaths}
+                    <div className="item">
+                        <span className="title">Deaths</span>
+                        <span className="count">{dailyStatValues.newDeaths}</span>
                     </div>
-                    <div>
-                        Recovered & Discharged
-                        {dailyStatValues.recovered}
+                    <div className="item">
+                        <span className="title">Recovered & Discharged</span>
+                        <span className="count">{dailyStatValues.recovered}</span>
                     </div>
                 </div>
             </div>
