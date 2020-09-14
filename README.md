@@ -4,7 +4,6 @@ Development guideline
 
 - Pre requirements
     - Must install node 12.14.1 (or higher) on your local development
-    - Create a dev.js file under config folder
 
 - Install and run on local
     - nvm use (only, if you have multiple node versions)
