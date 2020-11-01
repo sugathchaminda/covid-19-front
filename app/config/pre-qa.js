@@ -3,5 +3,5 @@ export default {
     front_end_url: 'xxxxxx',
     api_prefix: 'api/v1',   
     api_prefix2: 'api/v1',
-    api_prefix3: 'api/v1',
+    api_prefix4: 'api/v1',
 };
