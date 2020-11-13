@@ -13,4 +13,4 @@ Development guideline
 - Before commit changes
     - Must run 'yarn lint' and 'yarn prettier:validate' to check any coding style violations.
 
-- Deployment
+- Deployment dd test2 
